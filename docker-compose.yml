@@ -1,16 +1,22 @@
 version: '2'
 services:
 
-  node:
-    build: .
-    image: "${HACK_IMAGE}"
-    links:
-      - mongo
+  web:
+    image: mikemichel/workshop
     ports:
       - "80:3000"
+    depends_on:
+      - mongo
+    networks:
+      - all
     environment:
-      MONGODB: "mongodb://mongo:27017/hackathon"
+      MONGODB_URI: "mongodb://mongo:27017/eon"
 
   mongo:
-    image: mongo:2.6.11
+    image: mongo:3
     command: mongod --smallfiles
+    networks:
+      - all
+
+networks:
+  all:

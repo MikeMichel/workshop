@@ -1,5 +1,5 @@
 {
-    "project": "hackathon",
+    "project": "workshop",
     "services": [
         {
             "id": "web",
@@ -7,10 +7,10 @@
                 {
                     "id": "node",
                     "domain": {
-                        "uri": "hackathon.sloppy.zone"
+                        "uri": "workshop.sloppy.zone"
                     },
                     "mem": 512,
-                    "image": "mikemichel/hackathon-starter:0.1",
+                    "image": "mikemichel/workshop",
                     "instances": 1,
                     "port_mappings": [
                         {
@@ -18,7 +18,7 @@
                         }
                     ],
                     "env": {
-                        "MONGODB_URI": "mongodb://mongodb.db.hackathon/hackathon"
+                        "MONGODB_URI": "mongodb://mongodb.db.workshop/eon"
                     },
                     "dependencies": [
                         "../../db/mongodb"
