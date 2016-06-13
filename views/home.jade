@@ -1,9 +1,40 @@
-extends layout
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='theme-color' content='#4DA5F4')
+    meta(name='csrf-token', content=_csrf)
+    title #{title} - Hackathon Starter
+    link(rel='shortcut icon', href='/favicon.png')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/main.css')
+
+  body
+.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/')
+         img(src= "https://lh4.googleusercontent.com/-N0HpUE8wRhQ/AAAAAAAAAAI/AAAAAAAAABc/P7XWgHweReE/s0-c-k-no-ns/photo.jpg")
+        
+        
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        
+    .container
+
 
 block content
-  h1  Hackathon Starter deployed  using wercker and sloppy.io
+ 
+  h1 e-on Starter
   p.lead A boilerplate for Node.js web applications.
-  hr
+  
   .row
     .col-sm-6
       h2 Heading
@@ -25,3 +56,6 @@ block content
       p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
       p
         a.btn.btn-default(href='#', role='button') View details »
+
+
+
