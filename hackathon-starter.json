@@ -1,0 +1,49 @@
+{
+    "project": "hackathon",
+    "services": [
+        {
+            "id": "frontend",
+            "apps": [
+                {
+                    "id": "node",
+                    "domain": {
+                        "type": "HTTP",
+                        "uri": "$URI"
+                    },
+                    "mem": 512,
+                    "image": "mikemichel/hackathon-starter",
+                    "instances": 1,
+                    "port_mappings": [
+                        {
+                            "container_port": 3000
+                        }
+                    ],
+                    "env": {
+                        "MONGODB": "mongodb://mongodb.backend.hackathon/starter"
+                    },
+                    "dependencies": [
+                        "../../backend/mongodb"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "backend",
+            "apps": [
+                {
+                    "id": "mongodb",
+                    "mem": 512,
+                    "image": "mongo",
+                    "cmd": "mongod --smallfiles",
+                    "instances": 1,
+                    "volumes": [
+                        {
+                            "container_path": "/data/db",
+                            "size": "8GB"
+                }
+            ]
+                    }
+            ]
+        }
+    ]
+}
