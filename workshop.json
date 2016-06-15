@@ -7,7 +7,7 @@
                 {
                     "id": "node",
                     "domain": {
-                        "uri": "workshop.sloppy.zone"
+                        "uri": "workshop.volks.cloud"
                     },
                     "mem": 512,
                     "image": "mikemichel/workshop",
